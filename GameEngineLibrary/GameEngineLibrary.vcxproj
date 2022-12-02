@@ -162,6 +162,7 @@
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="GameEngine.cpp" />
     <ClCompile Include="GameState.cpp" />
+    <ClCompile Include="LoadingBar.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="ScreenState.cpp" />
     <ClCompile Include="SpriteEx.cpp" />
@@ -173,6 +174,7 @@
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="GameEngine.h" />
     <ClInclude Include="GameState.h" />
+    <ClInclude Include="LoadingBar.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="ScreenState.h" />
     <ClInclude Include="SpriteEx.h" />

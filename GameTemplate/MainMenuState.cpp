@@ -1,6 +1,7 @@
 #include "MainMenuState.h"
 #include "GameEngine.h"
 #include "GameLevel1.h"
+#include "SetupScreen.h"
 
 
 void MainMenuState::Enter()
@@ -23,7 +24,7 @@ void MainMenuState::Update()
 	{
 		//we need to switch to gamestate ... 
 		//In actualy project, make sure you implement code here to switch to relevant state when play button is clicked
-		GameEngine::Instance()->GetFSM()->ChangeState(new GameLevel1());
+		GameEngine::Instance()->GetFSM()->ChangeState(new SetupScreen());
 	}
 
 	else if (m_vButtons[btn::exit]->Clicked())
