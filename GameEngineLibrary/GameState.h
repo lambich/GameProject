@@ -11,6 +11,7 @@ class GameState : public ScreenState
 {
 protected:
 	SDL_Texture* mainSpriteTex;//load and store the main sprite texture
+	SDL_Texture* badSpriteTex;//load and store the main sprite texture
 	SDL_Texture* bgSpriteTex; //load and store background sprite tex
 
 
@@ -19,7 +20,7 @@ protected:
 	Player* player;
 	Enemy* enemy;
 
-
+	int enemySelection;
 public:
 	GameState() {}
 	void Update();
@@ -32,6 +33,6 @@ public:
 		return (sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1)) < (r1 + r2));
 
 	}
-
+	int randomEnemy(int selection);
 	void CheckCollision();
 };

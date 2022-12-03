@@ -27,6 +27,9 @@
     <ClCompile Include="GameLevel1.cpp">
       <Filter>Levels</Filter>
     </ClCompile>
+    <ClCompile Include="loadingScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="SetupScreen.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -40,6 +43,9 @@
     </ClInclude>
     <ClInclude Include="GameLevel1.h">
       <Filter>Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadingScreen.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SetupScreen.h">
       <Filter>Header Files</Filter>

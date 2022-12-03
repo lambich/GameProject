@@ -4,6 +4,7 @@
 #include <iostream>
 #include "GameEngine.h"
 #include "MainMenuState.h"
+#include "LoadingScreen.h"
 #include "SetupScreen.h"
 
 int main(int argc, char* argv[])
@@ -19,6 +20,7 @@ int main(int argc, char* argv[])
 
 //	Game::Instance()->InitializeGame();
 	//GameEngine::Instance()->GetFSM()->ChangeState(new MainMenuState());
+	//GameEngine::Instance()->GetFSM()->ChangeState(new LoadingScreen());
 	GameEngine::Instance()->GetFSM()->ChangeState(new SetupScreen());
 
 
