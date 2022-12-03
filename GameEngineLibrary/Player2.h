@@ -1,11 +1,9 @@
 #pragma once
-
 #include "SpriteEx.h"
 #include <vector>
 using namespace std;
 
-
-class Player : public SpriteExAnimated
+class Player2 : public SpriteExAnimated
 {
 private:
 
@@ -16,19 +14,15 @@ private:
 
 	void MovePlayer(bool isFwd);
 	void UpdatePlayer();
-	void tempUpdatePlayerWithOutMove();
 
 	void Jump();
 
 	void OnJumpAnimationComplete();
 	void OnSomethingComplete(int x);
 public:
-	Player(SDL_Texture* tex, double x, double y);
-	~Player();
-	virtual void tempUpdate();
+	Player2(SDL_Texture* tex, double x, double y);
+	~Player2();
 	virtual	void Update();
 	void Render();
-
-	//	void SetIdle();
-
 };
+

@@ -1,8 +1,8 @@
-#include "Player.h"
+#include "Player2.h"
 #include "GameEngine.h"
 #include <algorithm> //for min/max functions
 
-Player::Player(SDL_Texture* tex, double x, double y)
+Player2::Player2(SDL_Texture* tex, double x, double y)
 	: SpriteExAnimated(tex, x - 50, y - 50, 0, 1, 4, 0.1f)
 {
 
@@ -26,11 +26,11 @@ Player::Player(SDL_Texture* tex, double x, double y)
 	AddAnimState("Crouch", AnimStateDefinition(9, 1, 120));
 
 	animStates["Jump"].RegisterOnAnimCompleteCallback
-	(std::bind(&Player::OnJumpAnimationComplete, this));
+	(std::bind(&Player2::OnJumpAnimationComplete, this));
 
 	int aa = 4;
 	animStates["Jump"].RegisterOnSomethingCompletedCallback(
-		std::bind(&Player::OnSomethingComplete, this, aa)
+		std::bind(&Player2::OnSomethingComplete, this, aa)
 	);
 	//For Lab 4
 //	animStates["Kick"].RegisterOnAnimFrameCompleteCB(
@@ -38,12 +38,12 @@ Player::Player(SDL_Texture* tex, double x, double y)
 
 }
 
-void Player::OnSomethingComplete(int x)
+void Player2::OnSomethingComplete(int x)
 {
 	cout << "callback received: " << x << endl;
 }
 
-Player::~Player()
+Player2::~Player2()
 {
 
 
@@ -57,7 +57,7 @@ Player::~Player()
 //}
 
 
-void Player::Render()
+void Player2::Render()
 {
 
 	this->SpriteExAnimated::Render(); //invoke the base class's Render()
@@ -66,20 +66,14 @@ void Player::Render()
 
 
 
-void Player::Update()
+void Player2::Update()
 {
 
 	this->UpdatePlayer();
 }
 
-void Player::tempUpdate()
-{
 
-	this->tempUpdatePlayerWithOutMove();
-}
-
-
-void Player::Jump()
+void Player2::Jump()
 {
 	if (m_iFrame < 3)
 		m_Y -= m_velY;
@@ -99,7 +93,7 @@ void Player::Jump()
 }
 
 //Engine must call this function when our jump animation is completed.
-void Player::OnJumpAnimationComplete()
+void Player2::OnJumpAnimationComplete()
 {
 	cout << "Jump animation is completed. TODO: reset player back to pre-jump Y position.\n";
 
@@ -109,7 +103,7 @@ void Player::OnJumpAnimationComplete()
 }
 
 
-void Player::MovePlayer(bool isFwd)
+void Player2::MovePlayer(bool isFwd)
 {
 
 	if (isFwd)
@@ -123,7 +117,7 @@ void Player::MovePlayer(bool isFwd)
 
 
 
-void Player::UpdatePlayer()
+void Player2::UpdatePlayer()
 {
 
 
@@ -171,17 +165,6 @@ void Player::UpdatePlayer()
 	{
 		Jump();
 	}
-
-
-	this->spriteSrcRect.x = spriteSrcRect.w * m_iFrame;
-	this->UpdateDestRect();
-
-}
-
-void Player::tempUpdatePlayerWithOutMove()
-{
-
-	this->PlayState("Idle");
 
 
 	this->spriteSrcRect.x = spriteSrcRect.w * m_iFrame;

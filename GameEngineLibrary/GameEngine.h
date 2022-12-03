@@ -28,6 +28,7 @@ private:
 	bool m_bLeftMouse = false; // Keeps track of left mouse button state.
 	int m_iMouseX, m_iMouseY;  // Variables to hold mouse positions.
 
+	int playerSelection = 1;
 
 public:
 	static GameEngine* Instance(); //singleton instance reference
@@ -35,7 +36,8 @@ public:
 	SDL_Renderer* GetRenderer() { return sdlRenderer; }
 	SDL_Texture* LoadTexture(const char* path);
 
-
+	void setPlayerSelection(int selection) { playerSelection = selection; }
+	int getPlayerSelection() { return playerSelection; }
 	//window initialization happens here
 	bool Init(const char* title, const int xPos,
 		const int yPos, const int width, const int height,
