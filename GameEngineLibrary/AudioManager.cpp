@@ -41,7 +41,7 @@ void AudioManager::PlayMusic(int id, int loops)
 
 void AudioManager::PlaySound(int id, int channel, int loops)
 {
-	//Mix_PlayChannel(channel, m_vSounds[id], loops);
+	Mix_PlayChannel(channel, m_vSounds[id], loops);
 }
 
 void AudioManager::LoadMusic(const char* path)
@@ -68,6 +68,45 @@ void AudioManager::LoadSound(const char* path)
 		cout << "Sound load failed. \n";
 }
 
+void AudioManager::LoadMusicGlobal(const char* path, std::string label)
+{
+	Mix_Music* t = Mix_LoadMUS(path);
+	if (t != nullptr)
+		m_vMusicGlobal.push_back(make_pair(t, label));
+	else
+		cout << "Global music load failed. \n";
+}
+void AudioManager::LoadMusicLocal(const char* path, string label)
+{
+	Mix_Music* t = Mix_LoadMUS(path);
+	if (t != nullptr)
+		m_vMusicLocal.push_back(make_pair(t, label));
+	else
+		cout << "Local music load failed. \n";
+}
+
+void AudioManager::PlayMusicGlobal(string label)
+{
+	for (size_t i = 0; i < m_vMusicGlobal.size(); i++)
+	{
+		if (m_vMusicGlobal[i].second == label)
+		{
+			Mix_PlayMusic(m_vMusicGlobal[i].first, 1);
+		}
+	}
+}
+
+void AudioManager::PlayMusicLocal(string label)
+{
+	for (size_t i = 0; i < m_vMusicLocal.size(); i++)
+	{
+		if (m_vMusicLocal[i].second == label)
+		{
+			Mix_PlayMusic(m_vMusicLocal[i].first, 1);
+		}
+	}
+}
+
 void AudioManager::ToggleMusic()
 {
 	//Mix_PausedMusic() returns 1 if paused.
@@ -80,8 +119,15 @@ void AudioManager::ToggleMusic()
 
 void AudioManager::UnloadMusic()
 {
-	//how to unload a single music track from memory:
-	//Mix_FreeMusic(  )
+	for (size_t i = 0; i < m_vMusicTracks.size(); i++)
+	{
+		Mix_FreeMusic(m_vMusicTracks[i]);
+		m_vMusicTracks.erase(std::next(m_vMusicTracks.begin()));
+		m_vMusicTracks[i] = nullptr;
+	}
+	m_vMusicTracks.clear();
+	m_vMusicTracks.shrink_to_fit();
+
 
 	//how do you unload the entire vector?
 	//iterate through the vector,
@@ -95,6 +141,11 @@ void AudioManager::UnloadSound()
 {
 	//how to unload a single audio chunk from memory:
 	//Mix_FreeChunk(    )
+	for (size_t i = 0; i < m_vSounds.size(); i++)
+	{
+		Mix_FreeChunk(m_vSounds[i]);
+
+	}
 }
 
 AudioManager::~AudioManager()

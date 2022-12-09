@@ -129,7 +129,9 @@ public:
 	SpriteExAnimated(SDL_Texture* tex, double x, double y,
 		double a, int frameMax, int spriteMax, double speed);
 
-
+	std::string GetCurrentState() {
+		return currentState;
+	}
 };
 
 

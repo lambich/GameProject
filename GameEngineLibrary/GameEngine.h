@@ -24,6 +24,7 @@ private:
 
 	StateMachine* m_pFSM;
 	AudioManager* m_pAM; //pointer to the audio manager
+	AudioManager* m_music; //pointer to the audio manager
 
 	bool m_bLeftMouse = false; // Keeps track of left mouse button state.
 	int m_iMouseX, m_iMouseY;  // Variables to hold mouse positions.

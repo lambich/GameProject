@@ -1,6 +1,7 @@
 #include <iostream>
 #include "GameEngine.h"
 
+
 //#include "MainMenuState.h"
 
 using namespace std;
@@ -58,12 +59,12 @@ bool GameEngine::Init(const char* title, const int xPos, const int yPos, const i
 		return false;
 	//set to lower volume so we can hear sfx as well
 	m_pAM->SetMusicVolume(10);
-	//m_pAM->LoadSound("Aud/button.wav");
+	m_pAM->LoadSound("Aud/button.wav");
 	m_iKeystates = SDL_GetKeyboardState(nullptr);
 	isAppRunning = true;
 
 	m_pFSM = new StateMachine();
-	//m_pFSM->ChangeState(new MainMenuState());
+	//m_pFSM->ChangeState(new SetupScreen());
 
 
 

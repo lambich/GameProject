@@ -59,7 +59,7 @@ void Arrow::UpdateArrow()
 		GameEngine::Instance()->setPlayerSelection(selection);
 		cout << "Your choice: " + std::to_string(GameEngine::Instance()->getPlayerSelection()) + "\n";
 	}
-	
+
 	this->spriteSrcRect.x = spriteSrcRect.w * m_iFrame;
 	this->UpdateDestRect();
 }
