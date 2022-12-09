@@ -26,3 +26,13 @@ void Enemy::Update()
 
 	this->UpdateDestRect();
 }
+
+void Enemy::MoveEnemy(bool isFwd) // this method is use to move the enemy when 
+{								// player is not approaching the enemy
+	if (isFwd)
+		m_X += m_velX;
+	else
+		m_X -= m_velX;
+
+	this->PlayState("Move");
+}

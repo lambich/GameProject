@@ -9,6 +9,8 @@ class AudioManager
 {
 private:
 	vector<Mix_Music*> m_vMusicTracks;
+	vector<pair<Mix_Music*, string>> m_vMusicGlobal;
+	vector<pair<Mix_Music*, string>> m_vMusicLocal;
 	vector<Mix_Chunk*> m_vSounds;
 
 public:
@@ -29,6 +31,11 @@ public:
 	void LoadMusic(const char* path);
 	void LoadSound(const char* path);
 
+	//Todo
+	void LoadMusicGlobal(const char* pathname, string label);
+	void LoadMusicLocal(const char* pathname, string label);
+	void PlayMusicGlobal(string label);
+	void PlayMusicLocal(string label);
 
 	void UnloadMusic();
 	void UnloadSound();

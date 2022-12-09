@@ -125,7 +125,7 @@ void SetupScreen::Exit()
 	cout << "Exiting Setup screen..." << endl;
 
 	//resume music
-	//Game::Instance()->GetAM()->ToggleMusic();
+	//GameEngine::Instance()->GetAM()->ToggleMusic();
 
 	for (int i = 0; i < (int)m_vButtons.size(); i++)
 	{

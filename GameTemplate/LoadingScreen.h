@@ -4,7 +4,7 @@
 #include "Button.h"
 #include <vector>
 #include <iostream>
-#include <LoadingBar.h>
+#include "LoadingBar.h"
 
 using namespace std;
 
@@ -19,7 +19,7 @@ protected:
 
 	LoadingBar* loadingBar;
 
-	int delayTime = 500;
+	int delayTime = 100;
 public:
 	LoadingScreen() {}
 	void Update(); // Method prototype.

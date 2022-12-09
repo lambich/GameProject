@@ -157,34 +157,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Arrow.cpp" />
     <ClCompile Include="AudioManager.cpp" />
     <ClCompile Include="Button.cpp" />
-    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="GameEngine.cpp" />
-    <ClCompile Include="GameState.cpp" />
-    <ClCompile Include="LoadingBar.cpp" />
-    <ClCompile Include="Player.cpp" />
-    <ClCompile Include="Player2.cpp" />
+    <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="ScreenState.cpp" />
     <ClCompile Include="SpriteEx.cpp" />
     <ClCompile Include="StateMachine.cpp" />
-    <ClCompile Include="TextBox.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Arrow.h" />
     <ClInclude Include="AudioManager.h" />
     <ClInclude Include="Button.h" />
-    <ClInclude Include="Enemy.h" />
     <ClInclude Include="GameEngine.h" />
-    <ClInclude Include="GameState.h" />
-    <ClInclude Include="LoadingBar.h" />
-    <ClInclude Include="Player.h" />
-    <ClInclude Include="Player2.h" />
+    <ClInclude Include="GameManager.h" />
     <ClInclude Include="ScreenState.h" />
     <ClInclude Include="SpriteEx.h" />
     <ClInclude Include="StateMachine.h" />
-    <ClInclude Include="TextBox.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

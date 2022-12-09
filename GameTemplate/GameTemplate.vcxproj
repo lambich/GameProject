@@ -147,20 +147,52 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Arrow.cpp" />
+    <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="EnemyBullet.cpp" />
+    <ClCompile Include="EnterLevel2Screen.cpp" />
+    <ClCompile Include="EnterLevel3Screen.cpp" />
+    <ClCompile Include="EnterLevel4Screen.cpp" />
     <ClCompile Include="GameLevel1.cpp" />
+    <ClCompile Include="GameLevel2.cpp" />
+    <ClCompile Include="GameLevel3.cpp" />
+    <ClCompile Include="GameLevel4.cpp" />
+    <ClCompile Include="GameState.cpp" />
     <ClCompile Include="GameTemplate.cpp" />
+    <ClCompile Include="LoadingBar.cpp" />
+    <ClCompile Include="LossState.cpp" />
     <ClCompile Include="MainMenuState.cpp" />
     <ClCompile Include="loadingScreen.cpp" />
+    <ClCompile Include="PauseMenuPopupState.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="SetupScreen.cpp" />
+    <ClCompile Include="WinState.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Arrow.h" />
+    <ClInclude Include="Bullet.h" />
+    <ClInclude Include="Enemy.h" />
+    <ClInclude Include="EnemyBullet.h" />
+    <ClInclude Include="EnterLevel2Screen.h" />
+    <ClInclude Include="EnterLevel3Screen.h" />
+    <ClInclude Include="EnterLevel4Screen.h" />
     <ClInclude Include="GameLevel1.h" />
+    <ClInclude Include="GameLevel2.h" />
+    <ClInclude Include="GameLevel3.h" />
+    <ClInclude Include="GameLevel4.h" />
+    <ClInclude Include="GameState.h" />
+    <ClInclude Include="LoadingBar.h" />
+    <ClInclude Include="LossState.h" />
     <ClInclude Include="MainMenuState.h" />
     <ClInclude Include="LoadingScreen.h" />
+    <ClInclude Include="PauseMenuPopupState.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="SetupScreen.h" />
+    <ClInclude Include="WinState.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
