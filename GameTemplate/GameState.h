@@ -4,9 +4,9 @@
 #include "Enemy.h"
 #include "Bullet.h"
 #include "EnemyBullet.h"
-#include "ScreenState.h"
-#include "GameManager.h"
-#include "AudioManager.h"
+#include "../GameEngineLibrary/ScreenState.h"
+#include "../GameEngineLibrary/GameManager.h"
+#include "../GameEngineLibrary/AudioManager.h"
 
 #include <iostream>
 using namespace std;

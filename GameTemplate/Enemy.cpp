@@ -1,5 +1,6 @@
 #include "Enemy.h"
-
+#include "../GameEngineLibrary/GameEngine.h"
+#include "../GameEngineLibrary/Button.h"  
 Enemy::Enemy(SDL_Texture* tex, double x, double y) : Player(tex, x, y)
 {
 	isFlipped = true;

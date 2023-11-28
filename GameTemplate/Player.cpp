@@ -1,5 +1,6 @@
 #include "Player.h"
-#include "GameEngine.h"
+#include "../GameEngineLibrary/GameEngine.h"
+#include "../GameEngineLibrary/Button.h"  
 #include <algorithm> //for min/max functions
 
 Player::Player(SDL_Texture* tex, double x, double y)

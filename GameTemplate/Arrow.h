@@ -1,6 +1,6 @@
 #pragma once
 
-#include "SpriteEx.h"
+#include "../GameEngineLibrary/SpriteEx.h"
 #include <vector>
 using namespace std;
 

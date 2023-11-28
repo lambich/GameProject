@@ -59,8 +59,64 @@
     <ClInclude Include="GameManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="framework.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="x64\Debug\GameEngi.120deded.tlog\CL.command.1.tlog" />
+    <None Include="x64\Debug\GameEngi.120deded.tlog\GameEngineLibrary.lastbuildstate" />
+    <None Include="x64\Debug\GameEngi.120deded.tlog\unsuccessfulbuild" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Img\exit.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Img\loadingbar.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Img\play.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Img\restart.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Img\resume.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Img\Levels\SF_Level_1.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Img\Levels\SF_Level_2.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Img\Players\BadPlayerKenSprite2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Img\Players\PlayerKenSprite2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="Font\LTYPE.TTF" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="Aud\button.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="Aud\explode.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="Aud\game.mp3" />
+    <Media Include="Aud\lose.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="x64\Debug\GameEngineLibrary.Build.CppClean.log" />
+    <Text Include="x64\Debug\GameEngineLibrary.log" />
+    <Text Include="x64\Debug\GameEngineLibrary.vcxproj.FileListAbsolute.txt" />
   </ItemGroup>
 </Project>

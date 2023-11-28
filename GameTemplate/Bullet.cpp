@@ -1,5 +1,6 @@
 #include "Bullet.h"
-#include "GameEngine.h"
+#include "../GameEngineLibrary/GameEngine.h"
+#include "../GameEngineLibrary/Button.h"  
 #include <algorithm> //for min/max functions
 
 Bullet::Bullet(SDL_Texture* tex, double x, double y) : Player(tex, x, y)

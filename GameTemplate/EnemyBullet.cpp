@@ -1,5 +1,6 @@
 #include "EnemyBullet.h"
-#include "GameEngine.h"
+#include "../GameEngineLibrary/GameEngine.h"
+#include "../GameEngineLibrary/Button.h"  
 #include <algorithm> //for min/max functions
 
 EnemyBullet::EnemyBullet(SDL_Texture* tex, double x, double y) : Player(tex, x, y)

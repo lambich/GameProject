@@ -1,6 +1,8 @@
 #pragma once
 #include "StateMachine.h"
 #include <iostream>
+#include "pch.h"
+
 // Begin StateMachine
 void StateMachine::Update()
 {

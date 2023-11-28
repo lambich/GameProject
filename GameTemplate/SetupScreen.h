@@ -1,7 +1,7 @@
 #pragma once
-#include "ScreenState.h"
+#include "../GameEngineLibrary/ScreenState.h"
+#include "../GameEngineLibrary/Button.h"
 #include "Player.h"
-#include "Button.h"
 #include "Arrow.h"
 #include <vector>
 #include <string>

@@ -1,6 +1,7 @@
 #include "PauseMenuPopupState.h"
 #include <iostream>
-#include "GameEngine.h"
+#include "../GameEngineLibrary/GameEngine.h"
+#include "../GameEngineLibrary/Button.h"  
 #include "MainMenuState.h"
 using namespace std;
 

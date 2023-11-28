@@ -1,6 +1,6 @@
 #pragma once
 #include "SDL.h"
-#include "SpriteEx.h"
+#include "../GameEngineLibrary/SpriteEx.h"
 
 class LoadingBar : public SpriteExAnimated
 {

@@ -1,6 +1,8 @@
 
 #include <algorithm>
 #include "AudioManager.h"
+#include "pch.h"
+
 
 
 AudioManager::AudioManager()

@@ -2,6 +2,8 @@
 #include "GameEngine.h"
 #include "SDL.h"
 #include "SDL_image.h"
+#include "pch.h"
+
 
 Button::Button(const char* s, SDL_Rect src, SDL_Rect dst)
 {

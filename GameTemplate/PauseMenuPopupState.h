@@ -1,8 +1,9 @@
 #pragma once
 
-#include "ScreenState.h"
+#include "../GameEngineLibrary/ScreenState.h"
+#include "../GameEngineLibrary/Button.h"
 #include <vector>
-#include "Button.h"
+
 using namespace std;
 
 class PauseMenuPopupState : public ScreenState

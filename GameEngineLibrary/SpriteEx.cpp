@@ -1,6 +1,8 @@
 #include "GameEngine.h"
 
 
+
+
 void SpriteEx::Render()
 {
 	if (SDL_RenderCopyEx(GameEngine::Instance()->GetRenderer(), texture,

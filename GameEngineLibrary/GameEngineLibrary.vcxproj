@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
       <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
     </ProjectConfiguration>
     <ProjectConfiguration Include="Release|Win32">
       <Configuration>Release</Configuration>
@@ -23,32 +31,45 @@
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{120deded-45d2-4849-91c4-449c06d147e3}</ProjectGuid>
     <RootNamespace>GameEngineLibrary</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -66,7 +87,13 @@
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
@@ -79,7 +106,15 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
+    <AllProjectIncludesArePublic>false</AllProjectIncludesArePublic>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -137,6 +172,21 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -145,8 +195,27 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -168,27 +237,59 @@
   <ItemGroup>
     <ClInclude Include="AudioManager.h" />
     <ClInclude Include="Button.h" />
+    <ClInclude Include="framework.h" />
     <ClInclude Include="GameEngine.h" />
     <ClInclude Include="GameManager.h" />
+    <ClInclude Include="pch.h" />
     <ClInclude Include="ScreenState.h" />
     <ClInclude Include="SpriteEx.h" />
     <ClInclude Include="StateMachine.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="x64\Debug\GameEngi.120deded.tlog\CL.command.1.tlog" />
+    <None Include="x64\Debug\GameEngi.120deded.tlog\GameEngineLibrary.lastbuildstate" />
+    <None Include="x64\Debug\GameEngi.120deded.tlog\unsuccessfulbuild" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Img\exit.png" />
+    <Image Include="Img\Levels\SF_Level_1.jpg" />
+    <Image Include="Img\Levels\SF_Level_2.jpg" />
+    <Image Include="Img\loadingbar.png" />
+    <Image Include="Img\play.png" />
+    <Image Include="Img\Players\BadPlayerKenSprite2.png" />
+    <Image Include="Img\Players\PlayerKenSprite2.png" />
+    <Image Include="Img\restart.png" />
+    <Image Include="Img\resume.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="Font\LTYPE.TTF" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="Aud\button.wav" />
+    <Media Include="Aud\explode.wav" />
+    <Media Include="Aud\game.mp3" />
+    <Media Include="Aud\lose.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="x64\Debug\GameEngineLibrary.Build.CppClean.log" />
+    <Text Include="x64\Debug\GameEngineLibrary.log" />
+    <Text Include="x64\Debug\GameEngineLibrary.vcxproj.FileListAbsolute.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="..\packages\sdl2.redist.2.0.5\build\native\sdl2.redist.targets" Condition="Exists('..\packages\sdl2.redist.2.0.5\build\native\sdl2.redist.targets')" />
     <Import Project="..\packages\sdl2.2.0.5\build\native\sdl2.targets" Condition="Exists('..\packages\sdl2.2.0.5\build\native\sdl2.targets')" />
-    <Import Project="..\packages\sdl2_image.nuget.redist.2.6.2\build\native\sdl2_image.nuget.redist.targets" Condition="Exists('..\packages\sdl2_image.nuget.redist.2.6.2\build\native\sdl2_image.nuget.redist.targets')" />
-    <Import Project="..\packages\sdl2_image.nuget.2.6.2\build\native\sdl2_image.nuget.targets" Condition="Exists('..\packages\sdl2_image.nuget.2.6.2\build\native\sdl2_image.nuget.targets')" />
-    <Import Project="..\packages\sdl2_ttf.nuget.redist.2.20.1\build\native\sdl2_ttf.nuget.redist.targets" Condition="Exists('..\packages\sdl2_ttf.nuget.redist.2.20.1\build\native\sdl2_ttf.nuget.redist.targets')" />
-    <Import Project="..\packages\sdl2_ttf.nuget.2.20.1\build\native\sdl2_ttf.nuget.targets" Condition="Exists('..\packages\sdl2_ttf.nuget.2.20.1\build\native\sdl2_ttf.nuget.targets')" />
-    <Import Project="..\packages\sdl2_mixer.nuget.redist.2.6.2\build\native\sdl2_mixer.nuget.redist.targets" Condition="Exists('..\packages\sdl2_mixer.nuget.redist.2.6.2\build\native\sdl2_mixer.nuget.redist.targets')" />
-    <Import Project="..\packages\sdl2_mixer.nuget.2.6.2\build\native\sdl2_mixer.nuget.targets" Condition="Exists('..\packages\sdl2_mixer.nuget.2.6.2\build\native\sdl2_mixer.nuget.targets')" />
-    <Import Project="..\packages\sdl2.nuget.redist.2.24.2\build\native\sdl2.nuget.redist.targets" Condition="Exists('..\packages\sdl2.nuget.redist.2.24.2\build\native\sdl2.nuget.redist.targets')" />
-    <Import Project="..\packages\sdl2.nuget.2.24.2\build\native\sdl2.nuget.targets" Condition="Exists('..\packages\sdl2.nuget.2.24.2\build\native\sdl2.nuget.targets')" />
+    <Import Project="..\packages\sdl2.nuget.redist.2.28.5\build\native\sdl2.nuget.redist.targets" Condition="Exists('..\packages\sdl2.nuget.redist.2.28.5\build\native\sdl2.nuget.redist.targets')" />
+    <Import Project="..\packages\sdl2.nuget.2.28.5\build\native\sdl2.nuget.targets" Condition="Exists('..\packages\sdl2.nuget.2.28.5\build\native\sdl2.nuget.targets')" />
+    <Import Project="..\packages\sdl2_image.nuget.redist.2.6.3\build\native\sdl2_image.nuget.redist.targets" Condition="Exists('..\packages\sdl2_image.nuget.redist.2.6.3\build\native\sdl2_image.nuget.redist.targets')" />
+    <Import Project="..\packages\sdl2_image.nuget.2.6.3\build\native\sdl2_image.nuget.targets" Condition="Exists('..\packages\sdl2_image.nuget.2.6.3\build\native\sdl2_image.nuget.targets')" />
+    <Import Project="..\packages\sdl2_mixer.nuget.redist.2.6.3\build\native\sdl2_mixer.nuget.redist.targets" Condition="Exists('..\packages\sdl2_mixer.nuget.redist.2.6.3\build\native\sdl2_mixer.nuget.redist.targets')" />
+    <Import Project="..\packages\sdl2_mixer.nuget.2.6.3\build\native\sdl2_mixer.nuget.targets" Condition="Exists('..\packages\sdl2_mixer.nuget.2.6.3\build\native\sdl2_mixer.nuget.targets')" />
+    <Import Project="..\packages\sdl2_ttf.nuget.redist.2.20.2\build\native\sdl2_ttf.nuget.redist.targets" Condition="Exists('..\packages\sdl2_ttf.nuget.redist.2.20.2\build\native\sdl2_ttf.nuget.redist.targets')" />
+    <Import Project="..\packages\sdl2_ttf.nuget.2.20.2\build\native\sdl2_ttf.nuget.targets" Condition="Exists('..\packages\sdl2_ttf.nuget.2.20.2\build\native\sdl2_ttf.nuget.targets')" />
+    <Import Project="..\packages\sdl2_net.nuget.redist.2.2.0\build\native\sdl2_net.nuget.redist.targets" Condition="Exists('..\packages\sdl2_net.nuget.redist.2.2.0\build\native\sdl2_net.nuget.redist.targets')" />
+    <Import Project="..\packages\sdl2_net.nuget.2.2.0\build\native\sdl2_net.nuget.targets" Condition="Exists('..\packages\sdl2_net.nuget.2.2.0\build\native\sdl2_net.nuget.targets')" />
   </ImportGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
@@ -196,13 +297,15 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\sdl2.redist.2.0.5\build\native\sdl2.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\sdl2.redist.2.0.5\build\native\sdl2.redist.targets'))" />
     <Error Condition="!Exists('..\packages\sdl2.2.0.5\build\native\sdl2.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\sdl2.2.0.5\build\native\sdl2.targets'))" />
-    <Error Condition="!Exists('..\packages\sdl2_image.nuget.redist.2.6.2\build\native\sdl2_image.nuget.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\sdl2_image.nuget.redist.2.6.2\build\native\sdl2_image.nuget.redist.targets'))" />
-    <Error Condition="!Exists('..\packages\sdl2_image.nuget.2.6.2\build\native\sdl2_image.nuget.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\sdl2_image.nuget.2.6.2\build\native\sdl2_image.nuget.targets'))" />
-    <Error Condition="!Exists('..\packages\sdl2_ttf.nuget.redist.2.20.1\build\native\sdl2_ttf.nuget.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\sdl2_ttf.nuget.redist.2.20.1\build\native\sdl2_ttf.nuget.redist.targets'))" />
-    <Error Condition="!Exists('..\packages\sdl2_ttf.nuget.2.20.1\build\native\sdl2_ttf.nuget.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\sdl2_ttf.nuget.2.20.1\build\native\sdl2_ttf.nuget.targets'))" />
-    <Error Condition="!Exists('..\packages\sdl2_mixer.nuget.redist.2.6.2\build\native\sdl2_mixer.nuget.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\sdl2_mixer.nuget.redist.2.6.2\build\native\sdl2_mixer.nuget.redist.targets'))" />
-    <Error Condition="!Exists('..\packages\sdl2_mixer.nuget.2.6.2\build\native\sdl2_mixer.nuget.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\sdl2_mixer.nuget.2.6.2\build\native\sdl2_mixer.nuget.targets'))" />
-    <Error Condition="!Exists('..\packages\sdl2.nuget.redist.2.24.2\build\native\sdl2.nuget.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\sdl2.nuget.redist.2.24.2\build\native\sdl2.nuget.redist.targets'))" />
-    <Error Condition="!Exists('..\packages\sdl2.nuget.2.24.2\build\native\sdl2.nuget.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\sdl2.nuget.2.24.2\build\native\sdl2.nuget.targets'))" />
+    <Error Condition="!Exists('..\packages\sdl2.nuget.redist.2.28.5\build\native\sdl2.nuget.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\sdl2.nuget.redist.2.28.5\build\native\sdl2.nuget.redist.targets'))" />
+    <Error Condition="!Exists('..\packages\sdl2.nuget.2.28.5\build\native\sdl2.nuget.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\sdl2.nuget.2.28.5\build\native\sdl2.nuget.targets'))" />
+    <Error Condition="!Exists('..\packages\sdl2_image.nuget.redist.2.6.3\build\native\sdl2_image.nuget.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\sdl2_image.nuget.redist.2.6.3\build\native\sdl2_image.nuget.redist.targets'))" />
+    <Error Condition="!Exists('..\packages\sdl2_image.nuget.2.6.3\build\native\sdl2_image.nuget.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\sdl2_image.nuget.2.6.3\build\native\sdl2_image.nuget.targets'))" />
+    <Error Condition="!Exists('..\packages\sdl2_mixer.nuget.redist.2.6.3\build\native\sdl2_mixer.nuget.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\sdl2_mixer.nuget.redist.2.6.3\build\native\sdl2_mixer.nuget.redist.targets'))" />
+    <Error Condition="!Exists('..\packages\sdl2_mixer.nuget.2.6.3\build\native\sdl2_mixer.nuget.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\sdl2_mixer.nuget.2.6.3\build\native\sdl2_mixer.nuget.targets'))" />
+    <Error Condition="!Exists('..\packages\sdl2_ttf.nuget.redist.2.20.2\build\native\sdl2_ttf.nuget.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\sdl2_ttf.nuget.redist.2.20.2\build\native\sdl2_ttf.nuget.redist.targets'))" />
+    <Error Condition="!Exists('..\packages\sdl2_ttf.nuget.2.20.2\build\native\sdl2_ttf.nuget.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\sdl2_ttf.nuget.2.20.2\build\native\sdl2_ttf.nuget.targets'))" />
+    <Error Condition="!Exists('..\packages\sdl2_net.nuget.redist.2.2.0\build\native\sdl2_net.nuget.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\sdl2_net.nuget.redist.2.2.0\build\native\sdl2_net.nuget.redist.targets'))" />
+    <Error Condition="!Exists('..\packages\sdl2_net.nuget.2.2.0\build\native\sdl2_net.nuget.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\sdl2_net.nuget.2.2.0\build\native\sdl2_net.nuget.targets'))" />
   </Target>
 </Project>

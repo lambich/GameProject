@@ -1,5 +1,7 @@
 #include "GameState.h"
-#include "GameEngine.h"
+#include "../GameEngineLibrary/GameEngine.h"
+#include "../GameEngineLibrary/Button.h"  
+#include "../GameEngineLibrary/GameManager.h"  
 #include "PauseMenuPopupState.h"
 #include "GameLevel1.h"
 #include "GameLevel2.h"

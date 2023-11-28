@@ -1,5 +1,6 @@
 #include "LoadingBar.h"
-#include "GameEngine.h"
+#include "../GameEngineLibrary/GameEngine.h"
+#include "../GameEngineLibrary/Button.h"  
 
 LoadingBar::LoadingBar(SDL_Texture* tex, double x, double y) : SpriteExAnimated(tex, x - 50, y - 50, 0, 1, 4, 0.1f)
 {

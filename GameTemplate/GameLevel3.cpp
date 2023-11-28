@@ -1,5 +1,6 @@
 #include "GameLevel3.h"
-#include "GameEngine.h"
+#include "../GameEngineLibrary/GameEngine.h"
+#include "../GameEngineLibrary/Button.h"  
 
 void GameLevel3::Enter()
 {

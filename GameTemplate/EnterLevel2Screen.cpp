@@ -1,6 +1,7 @@
 #include "EnterLevel2Screen.h"
 #include <iostream>
-#include "GameEngine.h"
+#include "../GameEngineLibrary/GameEngine.h"
+#include "../GameEngineLibrary/Button.h"  
 #include "MainMenuState.h"
 #include "GameLevel1.h"
 #include "GameLevel2.h"
